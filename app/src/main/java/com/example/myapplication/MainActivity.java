@@ -37,7 +37,8 @@ public class MainActivity extends AppCompatActivity {
         btnCifraje.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String fixtercifrado = encriptarfrase(fitxernocifradotxt);
+                String a = fitxernocifradotxt.getText().toString();
+                String fixtercifrado = encriptarfrase(a);
                 String fitxernocifrado = fitxernocifradotxt.getText().toString();
                 crearfichero(fitxernocifrado,fixtercifrado);
                 desplieguedelfitxer.setText(fixtercifrado);
@@ -65,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
     private String timeactual() {
         Date date = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        String strDate= formatter.format(date);
+        String strDate = formatter.format(date);
         System.out.println(strDate);
         return strDate;
     }
