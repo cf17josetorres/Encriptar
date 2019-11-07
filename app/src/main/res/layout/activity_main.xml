@@ -10,28 +10,9 @@
         android:id="@+id/fitxernocifradoUsertxt"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="AbhiAndroid"
         android:textSize="20sp"
         android:gravity="center_horizontal"
         android:hint="Introduce el text"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="50dp"
-        android:textSize="20sp"
-        android:gravity="center_horizontal"
-        android:text="Texto cifrado :"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/desplieguedelfitxer"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text=""
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -45,6 +26,42 @@
         android:textColor="#fff"
         android:textStyle="bold"
         tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="78dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Texto cifrado: "
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="40dp" />
+        tools:layout_editor_absoluteY="160dp" />
+
+    <Button
+        android:id="@+id/desplieguedelfitxer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#009284"
+
+        android:gravity="center"
+        android:text="Descifrar"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="236dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Texto Descifrado: "
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="317dp" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
