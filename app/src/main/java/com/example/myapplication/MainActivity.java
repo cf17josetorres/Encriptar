@@ -136,8 +136,6 @@ public class MainActivity extends AppCompatActivity {
         return fixtercifrado;
     }
 
-
-
     public String infomexml(String fixtercifrado, String fitxernocifrado) {
         String informexml = "";
         informexml = informexml + "<?xml version= \"1.0\" encoding=\"UTF-8\"?>";
