@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnCifraje;
     TextView fitxernocifradotxt;
 
-
+    private static final String informexml = "informexmll.xml";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         FileOutputStream fichero;
 
         try {
-            fichero = openFileOutput("fitxernocifrado.txt",MODE_PRIVATE);
+            fichero = openFileOutput(informexml,MODE_PRIVATE);
             fichero.write(context.getBytes());
             fichero.close();
 
@@ -125,7 +125,8 @@ public class MainActivity extends AppCompatActivity {
 
 
             //Desciframos
-            String decode_text = rsa2.Decrypt(encode_text);
+
+            String decode_text = rsa2.Encrypt(encode_text);
 
             //Mostramos el texto ya descifrado
             desplieguedelfitxer.setText(decode_text);
