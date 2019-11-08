@@ -10,7 +10,6 @@
         android:id="@+id/fitxernocifradoUsertxt"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
         android:gravity="center_horizontal"
         android:hint="Introduce el text"
         tools:ignore="MissingConstraints" />
@@ -44,7 +43,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#009284"
-
         android:gravity="center"
         android:text="Descifrar"
         android:textColor="#fff"
