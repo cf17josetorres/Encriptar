@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     TextView desplieguedelfitxer;
     Button btnCifraje;
     TextView fitxernocifradotxt;
+    TextView fitxerdespliegue;
 
     private static final String informexml = "informexmll.xml";
     @Override
@@ -33,15 +34,15 @@ public class MainActivity extends AppCompatActivity {
         btnCifraje = findViewById(R.id.fitxercifradoo);
         desplieguedelfitxer = findViewById(R.id.desplieguedelfitxer);
         fitxernocifradotxt = findViewById(R.id.fitxernocifradoUsertxt);
-
+        fitxerdespliegue = findViewById(R.id.fitxerdespliegue);
         btnCifraje.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String a = fitxernocifradotxt.getText().toString();
                 String fixtercifrado = encriptarfrase(a);
-                String fitxernocifrado = fitxernocifradotxt.getText().toString();
+                String fitxernocifradotxt = desencriptarfrase(fixtercifrado);
+                String fitxernocifrado = fitxernocifradotxt;
                 crearfichero(fitxernocifrado,fixtercifrado);
-                desplieguedelfitxer.setText(fixtercifrado);
             }
         });
 
@@ -109,8 +110,8 @@ public class MainActivity extends AppCompatActivity {
         return encode_text;
     }
 
-    private String desencriptarfrase (String fixtercifrado) {
-        String encode_text = " ";
+    private String desencriptarfrase (String fixterdesicifrado) {
+        String desen_text = " ";
 
         try {
 
@@ -122,18 +123,20 @@ public class MainActivity extends AppCompatActivity {
             //Generamos un juego de claves
             rsa2.genKeyPair(1024);
 
-
+            //Guardamos en la memoria las claves
+            rsa2.saveToDiskPrivateKey("rsa.pri");
+            rsa2.saveToDiskPublicKey("rsa.pub");
 
             //Desciframos
 
-            String decode_text = rsa2.Encrypt(encode_text);
+            desen_text = rsa2.Decrypt(fixterdesicifrado);
 
             //Mostramos el texto ya descifrado
-            desplieguedelfitxer.setText(decode_text);
+            fitxernocifradotxt.setText(desen_text);
         } catch (Exception e) {
 
         }
-        return fixtercifrado;
+        return desen_text;
     }
 
     public String infomexml(String fixtercifrado, String fitxernocifrado) {
